@@ -1,0 +1,44 @@
+[
+    {
+        "nome": "Lasanha à Bolonhesa",
+        "descricao": "Clássica lasanha com camadas de massa, molho bolonhesa rico, molho bechamel e queijo gratinado.",
+        "ano": "Por volta do Século XIII",
+        "link": "https://pt.wikipedia.org/wiki/Lasanha",
+        "imagem": "assets/lasanha.png"
+    },
+    {
+        "nome": "Nhoque ao Sugo",
+        "descricao": "Nhoque de batata macio e delicado, servido com um tradicional e saboroso molho de tomate fresco.",
+        "ano": "Por volta do Século XVI",
+        "link": "https://pt.wikipedia.org/wiki/Nhoque",
+        "imagem": "assets/nhoque.png"
+    },
+    {
+        "nome": "Macarronada Carbonara",
+        "descricao": "Espaguete envolvido em um molho cremoso de ovos, queijo pecorino, pimenta preta e pancetta crocante.",
+        "ano": "Década de 1940",
+        "link": "https://pt.wikipedia.org/wiki/Carbonara",
+        "imagem": "assets/macarronada.png"
+    },
+    {
+        "nome": "Gelato Artesanal",
+        "descricao": "Autêntico gelato italiano, cremoso e saboroso. Disponível em diversos sabores feitos com ingredientes frescos.",
+        "ano": "Por volta do Século XVI",
+        "link": "https://pt.wikipedia.org/wiki/Gelato",
+        "imagem": "assets/gelato.png"
+    },
+    {
+        "nome": "Arancini",
+        "descricao": "Bolinhos de arroz fritos, recheados com ragu (molho de carne), ervilhas e queijo muçarela, típicos da Sicília.",
+        "ano": "Por volta do Século X",
+        "link": "https://pt.wikipedia.org/wiki/Arancino",
+        "imagem": "assets/arancini.png"
+    },
+    {
+        "nome": "Torta della Nonna",
+        "descricao": "Torta italiana da região da Toscana, feita com massa *pasta frolla*, recheio de creme de baunilha e coberta com pinoli e açúcar de confeiteiro.",
+        "ano": "Por volta do Século XX",
+        "link": "https://en.wikipedia.org/wiki/Torta_della_nonna",
+        "imagem": "assets/torta-della-nonna.png"
+    }
+]

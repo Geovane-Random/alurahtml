@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); /* Fonte principal */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap'); /* Fonte cursiva para o subtítulo */
+
+body {
+    /* Configurações de layout com Flexbox */
+    display: flex; /* Ativa o layout Flexbox para o corpo da página */
+    flex-direction: column; /* Organiza os itens em coluna (header, main, footer) */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    min-height: 100vh; /* Garante que o corpo ocupe pelo menos toda a altura da tela */
+
+    /* Estilos estéticos */
+    background-color: #F5EFE6; /* Define a cor de fundo da página */
+    color: #5D4037; /* Define a cor padrão do texto */
+    font-family: 'Montserrat', sans-serif; /* Define a família de fontes para todo o corpo */
+    line-height: 1.6; /* Define a altura da linha para melhorar a legibilidade */
+    margin: 0; /* Remove a margem padrão do body */
+    padding: 20px 0; /* Adiciona espaçamento interno vertical (topo e base) */
+}
+
+/* Estilos para o Cabeçalho, Conteúdo Principal e Rodapé */
+header, main, footer {
+    width: 90%; /* Define a largura como 90% da largura do elemento pai (body) */
+    max-width: 960px; /* Define uma largura máxima para evitar que o conteúdo fique muito largo */
+    text-align: center; /* Centraliza o texto dentro desses elementos */
+}
+
+header {
+    margin-bottom: 40px; /* Adiciona uma margem na parte inferior do cabeçalho */
+}
+
+main {
+    /* O container principal do conteúdo */
+    padding: 30px; /* Adiciona espaçamento interno em todos os lados */
+    background-color: #FAF6F0; /* Define uma cor de fundo para a seção principal */
+    border-radius: 8px; /* Arredonda as bordas do container principal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Adiciona uma sombra sutil para dar profundidade */
+    margin-bottom: 40px; /* Adiciona uma margem na parte inferior da seção principal */
+}
+
+footer {
+    margin-top: auto; /* Empurra o rodapé para o final da página (funciona com display: flex no body) */
+    padding-top: 20px; /* Adiciona espaçamento interno no topo do rodapé */
+    border-top: 1px solid #E0D8CC; /* Adiciona uma linha de separação no topo do rodapé */
+}
+
+/* --- Estilos para elementos específicos --- */
+
+h1 {
+    color: #3E2723; /* Define a cor do texto para os títulos h1 */
+    font-weight: 700; /* Define o peso da fonte como negrito (bold) */
+    line-height: 1.2; /* Ajusta a altura da linha para acomodar o subtítulo */
+    margin-bottom: 10px; /* Reduz a margem inferior para aproximar da barra de busca */
+}
+
+/* Estilo para o subtítulo dentro do h1 */
+.subtitle {
+    display: block; /* Faz o span se comportar como um bloco, quebrando a linha */
+    font-family: 'Dancing Script', cursive; /* Aplica a fonte cursiva elegante */
+    font-size: 1.8rem; /* Define um tamanho menor para o subtítulo */
+    font-weight: 500; /* Peso da fonte importada */
+    color: #8D6E63; /* Uma cor mais suave, a mesma do botão */
+    margin-top: 5px; /* Adiciona um pequeno espaço acima do subtítulo */
+}
+
+/* Container para a barra de busca */
+.search-bar {
+    display: flex; /* Ativa o layout Flexbox para a barra de busca */
+    justify-content: center; /* Centraliza os itens (input e button) horizontalmente */
+    gap: 10px; /* Cria um espaço de 10px entre os itens flexíveis */
+    margin-top: 25px; /* Adiciona uma margem no topo da barra de busca */
+    width: 100%; /* Define a largura como 100% do elemento pai (header) */
+    max-width: 500px; /* Define uma largura máxima para a barra de busca */
+    margin-left: auto; /* Centraliza a barra de busca horizontalmente (junto com margin-right) */
+    margin-right: auto; /* Centraliza a barra de busca horizontalmente (junto com margin-left) */
+}
+
+/* Estilizando a busca */
+input[type="text"] {
+    padding: 10px; /* Adiciona espaçamento interno ao campo de texto */
+    border: 1px solid #D7CCC8; /* Define a borda do campo de texto */
+    border-radius: 4px; /* Arredonda as bordas do campo de texto */
+    font-family: 'Montserrat', sans-serif; /* Garante que o campo de texto use a mesma fonte */
+    flex-grow: 1; /* Permite que o input cresça para preencher o espaço disponível */
+    min-width: 250px; /* Define uma largura mínima para o campo de texto */
+}
+
+/* Estilizando a lista do rodapé */
+footer ul {
+    list-style: none; /* Remove os marcadores (bolinhas) da lista */
+    padding: 0; /* Remove o preenchimento padrão da lista */
+    display: flex; /* Ativa o layout Flexbox para os itens da lista */
+    justify-content: center; /* Centraliza os itens da lista horizontalmente */
+    gap: 20px; /* Cria um espaço de 20px entre os itens da lista (os links) */
+}
+
+footer a {
+    color: #5D4037; /* Define a cor dos links no rodapé */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Adiciona um sublinhado quando o mouse passa sobre o link */
+}
+
+/* --- Container dos Cards --- */
+.card-container {
+    display: grid; /* Ativa o layout de grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas responsivas */
+    gap: 30px; /* Espaçamento entre os cards */
+}
+
+/* --- Estilos dos Cards --- */
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex; /* Adicionado para melhor controle do conteúdo interno */
+    flex-direction: column; /* Organiza a imagem e o conteúdo em coluna */
+    overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+    text-align: left; /* Alinha o texto do card à esquerda */
+}
+
+.card-image {
+    width: 100%; /* Faz a imagem ocupar toda a largura do card */
+    height: 230px; /* Define uma altura fixa para a imagem */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+.card-content {
+    padding: 20px; /* Adiciona espaçamento interno ao conteúdo do card */
+}
+
+.card-content h2 {
+    margin-top: 0; /* Remove a margem superior do título do card */
+}
+.card-content p {
+    font-size: 0.9rem; /* Diminui um pouco o tamanho da fonte da descrição */
+}
+
+/* --- Estilos para o Card Expandido (Modal) --- */
+
+/* Overlay de fundo */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999; /* Garante que fique acima de tudo, exceto o card expandido */
+}
+
+.hidden {
+    display: none; /* Esconde o elemento */
+}
+
+/* Estilo do card quando expandido */
+.card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw; /* 90% da largura da tela */
+    max-width: 600px; /* Largura máxima */
+    max-height: 80vh; /* Altura máxima */
+    z-index: 1000; /* Garante que o card fique acima do overlay */
+    transition: none; /* Remove a transição para a expansão ser instantânea */
+}
+
+.card.expanded .card-image {
+    height: 330px; /* Imagem maior no modo expandido */
+}
+
+.card.expanded .card-content {
+    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for muito grande */
+    flex-grow: 1; /* Permite que o conteúdo cresça para preencher o espaço */
+}
+
+/* Botão de fechar */
+.close-btn {
+    background: #3E2723; /* Cor do título principal, para consistência */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Animação suave */
+}
+
+/* Aplica o posicionamento SOMENTE quando o card está expandido */
+.card.expanded .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex; /* Torna o botão visível e centraliza o 'x' */
+    z-index: 1001; /* Garante que o botão fique acima de tudo no card */
+}
+
+.close-btn:hover {
+    background-color: #5D4037; /* Cor do texto principal no hover */
+    transform: scale(1.1); /* Aumenta um pouco o botão no hover */
+}
