@@ -48,6 +48,7 @@ footer {
 h1 {
     color: #3E2723; /* Define a cor do texto para os títulos h1 */
     font-weight: 700; /* Define o peso da fonte como negrito (bold) */
+    font-size: 3rem; /* Aumenta o tamanho da fonte do título principal */
     line-height: 1.2; /* Ajusta a altura da linha para acomodar o subtítulo */
     margin-bottom: 10px; /* Reduz a margem inferior para aproximar da barra de busca */
 }
@@ -56,7 +57,7 @@ h1 {
 .subtitle {
     display: block; /* Faz o span se comportar como um bloco, quebrando a linha */
     font-family: 'Dancing Script', cursive; /* Aplica a fonte cursiva elegante */
-    font-size: 1.8rem; /* Define um tamanho menor para o subtítulo */
+    font-size: 2.2rem; /* Aumenta o tamanho da fonte do subtítulo */
     font-weight: 500; /* Peso da fonte importada */
     color: #8D6E63; /* Uma cor mais suave, a mesma do botão */
     margin-top: 5px; /* Adiciona um pequeno espaço acima do subtítulo */
