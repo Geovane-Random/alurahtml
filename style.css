@@ -84,6 +84,22 @@ input[type="text"] {
     min-width: 250px; /* Define uma largura mínima para o campo de texto */
 }
 
+/* Estilo específico para o botão de busca */
+.search-bar button {
+    padding: 10px 15px; /* Adiciona espaçamento interno */
+    border: none; /* Remove a borda */
+    background-color: #8D6E63; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mãozinha */
+    font-family: 'Montserrat', sans-serif; /* Mesma fonte do site */
+    transition: background-color 0.2s ease; /* Transição suave */
+}
+
+.search-bar button:hover {
+    background-color: #5D4037; /* Escurece no hover */
+}
+
 /* Estilizando a lista do rodapé */
 footer ul {
     list-style: none; /* Remove os marcadores (bolinhas) da lista */

@@ -2,6 +2,7 @@
 const cardContainer = document.querySelector('.card-container');
 const overlay = document.getElementById('overlay');
 const campoBusca = document.querySelector('header input');
+const botaoBusca = document.querySelector('.search-bar button');
 let dados = [];
 
 // Função para renderizar os cards na tela
@@ -77,6 +78,8 @@ async function iniciarBusca() {
 document.addEventListener('DOMContentLoaded', iniciarBusca);
 // Adiciona um ouvinte para filtrar os cards em tempo real, enquanto o usuário digita
 campoBusca.addEventListener('input', iniciarBusca);
+// Adiciona um ouvinte para o clique no botão de busca (funcionalidade dupla)
+botaoBusca.addEventListener('click', iniciarBusca);
 // Adiciona um ouvinte para fechar o card se o usuário clicar no overlay
 overlay.addEventListener('click', () => {
     const cardAberto = document.querySelector('.card.expanded');
