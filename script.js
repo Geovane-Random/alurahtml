@@ -200,6 +200,13 @@ campoBusca.addEventListener('input', iniciarBusca);
 // Adiciona um ouvinte para o clique no botão de busca (funcionalidade dupla)
 botaoBusca.addEventListener('click', iniciarBusca);
 
+// Adiciona um ouvinte para fechar o modal do carrinho ao clicar fora dele
+cartModal.addEventListener('click', (event) => {
+    if (event.target === cartModal) { // Verifica se o clique foi no fundo (overlay)
+        fecharModalCarrinho();
+    }
+});
+
 // Eventos do Carrinho (Modal)
 cartButton.addEventListener('click', () => cartModal.classList.remove('hidden'));
 closeCartBtn.addEventListener('click', fecharModalCarrinho); // Usa a nova função para fechar
