@@ -35,6 +35,23 @@
             </li>
         </ul>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Botão Flutuante do Carrinho -->
+    <div id="cart-button" class="hidden">
+        <span id="cart-count">0</span>
+        🛒
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="hidden">
+        <div class="cart-modal-content">
+            <button id="close-cart-btn">x</button>
+            <h2>Meu Pedido</h2>
+            <div id="cart-items-container"></div>
+            <button id="send-whatsapp-btn" class="whatsapp-button">Finalizar Pedido via WhatsApp</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
 </body>
 </html>
