@@ -58,7 +58,18 @@ function renderizarCards(itens) {
         // Adiciona evento ao botão de adicionar ao carrinho
         const addToCartBtn = article.querySelector('.add-to-cart-btn');
         addToCartBtn.addEventListener('click', () => {
+            // Lógica original para adicionar ao carrinho
             adicionarAoCarrinho(dado);
+
+            // Animação de feedback
+            addToCartBtn.classList.add('added');
+            addToCartBtn.textContent = 'Adicionado!';
+
+            // Remove a animação e restaura o texto após 1.5 segundos
+            setTimeout(() => {
+                addToCartBtn.classList.remove('added');
+                addToCartBtn.textContent = 'Adicionar ao Pedido';
+            }, 1500);
         });
         cardContainer.appendChild(article);
     }

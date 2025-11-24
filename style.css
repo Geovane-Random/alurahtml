@@ -167,6 +167,13 @@ footer a:hover {
     width: 100%;
     margin-top: auto; /* Empurra o botão para o fundo do card-content */
     padding: 12px; /* Ajuste no padding para melhor aparência */
+    border: none; /* Garante que não tenha borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mãozinha */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animação suave */
+}
+.card-content .add-to-cart-btn.added {
+    background-color: #2E7D32; /* Um tom de verde para confirmar a adição */
 }
 
 /* --- Estilos para o Card Expandido (Modal) --- */
