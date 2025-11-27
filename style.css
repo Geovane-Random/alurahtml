@@ -355,3 +355,46 @@ footer a:hover {
     font-weight: bold;
     font-size: 1rem;
 }
+
+/* --- Estilos para Preços e Carrinho --- */
+
+/* Estilo para o preço no card do produto */
+.card-price {
+    font-family: 'Montserrat', sans-serif; /* Mantém a consistência da fonte */
+    font-size: 1.3rem; /* Tamanho destacado */
+    font-weight: bold; /* Negrito para chamar atenção */
+    color: #8D6E63; /* Cor que combina com o subtítulo e botão */
+    margin-bottom: 8px; /* Espaçamento abaixo do preço */
+}
+
+/* Container para as informações do item no carrinho (nome e preço) */
+.cart-item-info {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1; /* Faz este container crescer e empurrar os botões */
+}
+
+/* Estilo para o preço TOTAL no modal do carrinho */
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: right; /* Alinha o total à direita para melhor visualização */
+    margin-top: 15px;
+}
+
+/* Controles de adicionar/remover item no carrinho */
+.cart-item-controls button {
+    background: #E0D8CC;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.cart-item-controls button:hover {
+    background: #D7CCC8;
+}
+}

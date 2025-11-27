@@ -10,6 +10,7 @@ const closeCartBtn = document.getElementById('close-cart-btn');
 const cartItemsContainer = document.getElementById('cart-items-container');
 const cartCount = document.getElementById('cart-count');
 const sendWhatsappBtn = document.getElementById('send-whatsapp-btn');
+const cartTotalValue = document.getElementById('cart-total-value');
 let dados = [];
 let carrinho = [];
 
@@ -29,6 +30,7 @@ function renderizarCards(itens) {
             <button class="close-btn hidden">x</button>
             <div class="card-content">
                 <h2>${dado.nome}</h2>
+                <p class="card-price">${dado.preco.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</p>
                 <p>Origem: ${dado.ano}</p>
                 <p>${dado.descricao}</p>
                 <a href="${dado.link}" target="_blank" rel="noopener noreferrer">Ver na Wikipedia</a>
@@ -108,13 +110,14 @@ function adicionarAoCarrinho(item) {
     if (itemExistente) {
         itemExistente.quantity++;
     } else {
-        carrinho.push({ nome: item.nome, quantity: 1 });
+        carrinho.push({ nome: item.nome, preco: item.preco, quantity: 1 });
     }
     atualizarCarrinhoUI();
 }
 
 function atualizarCarrinhoUI() {
     // Atualiza o contador do botão flutuante
+    let totalCarrinho = 0;
     const totalItens = carrinho.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItens;
 
@@ -130,18 +133,25 @@ function atualizarCarrinhoUI() {
         cartItemsContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
     } else {
         carrinho.forEach(item => {
+            totalCarrinho += item.preco * item.quantity;
             const itemElement = document.createElement('div');
             itemElement.classList.add('cart-item');
             itemElement.innerHTML = `
-                <span>${item.quantity}x ${item.nome}</span>
-                <span>
+                <div class="cart-item-info">
+                    <span>${item.quantity}x ${item.nome}</span>
+                    <span>${(item.preco * item.quantity).toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</span>
+                </div>
+                <div class="cart-item-controls">
                     <button class="remove-one-btn" data-name="${item.nome}">-</button>
                     <button class="add-one-btn" data-name="${item.nome}">+</button>
-                </span>
+                </div>
             `;
             cartItemsContainer.appendChild(itemElement);
         });
     }
+
+    // Atualiza o valor total no modal
+    cartTotalValue.textContent = totalCarrinho.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
 
 // --- LÓGICA DE MANIPULAÇÃO DO CARRINHO ---
@@ -172,11 +182,15 @@ cartItemsContainer.addEventListener('click', (event) => {
 const sendMessage = () => {
     if (carrinho.length === 0) return; // Não envia se o carrinho estiver vazio
 
-    const message = carrinho
-      .map(item => `${item.quantity}x ${item.nome}`)
-      .join(', ');
-    const fullMessage = `Olá, gostaria de solicitar um orçamento para os seguintes itens: ${message}.`;
+    const totalPreco = carrinho.reduce((sum, item) => sum + (item.quantity * item.preco), 0);
+
+    const messageItems = carrinho
+      .map(item => `${item.quantity}x ${item.nome} - ${ (item.preco * item.quantity).toLocaleString("pt-BR", {style: "currency", currency: "BRL"}) }`)
+      .join('\n');
+
+    const fullMessage = `Olá, gostaria de fazer o seguinte pedido:\n\n${messageItems}\n\n*Total: ${totalPreco.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}*`;
     const url = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(fullMessage)}`;
+    
     window.open(url, '_blank');
 
     // Fecha o modal e limpa o carrinho após enviar o pedido
